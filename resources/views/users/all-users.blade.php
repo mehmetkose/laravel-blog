@@ -292,33 +292,13 @@
                         </div>
                         <div class="info">
                             <div class="title">
-                                <a href="/&#64;{{ $user->id }}">{{ $user->name }}</a>
+                                <a href="/{{ $user->id }}">{{ $user->name }}</a>
                             </div>
-                            <div class="desc">Passionate designer</div>
-                            <div class="desc">Curious developer</div>
-                            <div class="desc">Tech geek</div>
                             <p class="lead text-center article-count">{{ $user->articles()->count() }}</p>
                         </div>
-                        <div class="social-account-container">
-                            <a class="social-account" href="https://twitter.com/{{ $user->profile->twitter_username }}">
-                                <i class="fa fa-fw fa-2x fa-twitter"></i>
-                            </a>
-                            <a class="social-account" href="https://facebook.com/{{ $user->profile->facebook_username }}">
-                                <i class="fa fa-fw fa-2x fa-facebook"></i>
-                            </a>
-                            <a class="social-account" href="https://instagram.com/{{ $user->profile->instagram_username }}">
-                                <i class="fa fa-fw fa-2x fa-instagram"></i>
-                            </a>
-                        </div>
                     </div>
-
-
                         {{--{{ $user->articles()->count() }}--}}
                     </div>
-
-
-
-
                 @endforeach
 
                 {!! $users->render() !!}
