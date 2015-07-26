@@ -32,10 +32,16 @@ class Article extends Model
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = ucfirst($value);
-     
+        
+        $slug = Str::slug($value);
+
         if( ! $this->slug)
         {
-            $this->attributes['slug'] = Str::slug($value);
+            $this->attributes['slug'] = $slug;
+        }
+        
+        if(!$slug) {
+            $slug = Str::random(7);
         }
     }
 

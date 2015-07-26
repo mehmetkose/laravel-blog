@@ -36,7 +36,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            Alert::message("You're already logged in!");
+            #Alert::message("You're already logged in!");
             return redirect('/blog');
         }
 
