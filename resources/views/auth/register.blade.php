@@ -18,7 +18,7 @@
                     </div>
                 @endif
 
-                <form role="form" method="POST" action="{{ url('/register') }}">
+                {!! Form::open(array('route' => 'post_register')) !!}
                     {!! csrf_field() !!}
 
                     <div class="form-group">
@@ -46,7 +46,8 @@
                             Sign up
                         </button>
                     </div>
-                </form>
+                {!! Form::close() !!}
+                
             </div>
         </div>
     </div>

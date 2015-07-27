@@ -9,7 +9,7 @@
 
         <h1>Reset Password</h1>
                 
-                <form method="POST" action="/password/email">
+               {!! Form::open(array('route' => 'post_email')) !!}
                     {!! csrf_field() !!}
 
                     <div class="form-group">
@@ -22,7 +22,7 @@
                             Send Password Reset Link
                         </button>
                     </div>
-                </form>
+                {!! Form::close() !!}
 
         </div>
     </div>

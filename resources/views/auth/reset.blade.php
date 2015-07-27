@@ -4,7 +4,7 @@
 
     <!-- resources/views/auth/reset.blade.php -->
 
-<form method="POST" action="/password/reset">
+{!! Form::open(array('route' => 'post_password_reset')) !!}
     {!! csrf_field() !!}
     <input type="hidden" name="token" value="{{ $token }}">
 
@@ -28,6 +28,6 @@
             Reset Password
         </button>
     </div>
-</form>
+{!! Form::close() !!}
 
 @endsection

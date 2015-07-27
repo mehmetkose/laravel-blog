@@ -17,9 +17,11 @@
                         </ul>
                     </div>
                 @endif
+                
+                
 
-                <form role="form" method="POST" action="{{ url('/login') }}">
-                    {!! csrf_field() !!}
+                {!! Form::open(array('route' => 'post_login')) !!}
+                    {!! Form::token(); !!}
 
                     <div class="form-group">
                         <label class="control-label">E-Mail Address</label>
@@ -44,7 +46,8 @@
 
                             <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
                     </div>
-                </form>
+                {!! Form::close() !!}
+                
             </div>
         </div>
     </div>

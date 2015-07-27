@@ -77,7 +77,22 @@
     <div class="container">
         <div class="content">
             <div class="title animated fadeInDown">Blog</div>
-            <a href="/register" class="btn btn-primary btn-responsive">Sign up</a> <span class="spacer">or</span> <a href="/login" class="btn btn-primary btn-responsive">Sign in</a>
+            
+            {!! link_to_route(
+                'get_register', 
+                $title = 'Sign up', 
+                $parameters = array(), 
+                $attributes = array('class' => 'btn btn-primary btn-responsive')) 
+            !!}
+            
+            <span class="spacer">or</span> 
+            
+            {!! link_to_route(
+                'get_login', 
+                $title = 'Sign in', 
+                $parameters = array(), 
+                $attributes = array('class' => 'btn btn-primary btn-responsive')) 
+            !!}
         </div>
     </div>
 

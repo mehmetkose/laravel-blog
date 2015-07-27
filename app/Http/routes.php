@@ -12,23 +12,22 @@ Route::get('{slug}.html', ['as' => 'blog_post_path', 'uses' => 'ArticlesControll
 Route::get('roles', ['as' => 'my_roles_path', 'uses' => 'UsersController@getMyRoles', 'middleware' => ['auth']]);
 Route::get('permissions', ['as' => 'my_permissions_path', 'uses' => 'UsersController@getMyPermissions', 'middleware' => ['auth']]);
 
-
 // Authentication routes...
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('logout', 'Auth\AuthController@getLogout');
+Route::get('login', ['as' => 'get_login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('login', ['as' => 'post_login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('logout', ['as' => 'get_logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Registration routes...
-Route::get('register', 'Auth\AuthController@getRegister');
-Route::post('register', 'Auth\AuthController@postRegister');
+Route::get('register', ['as' => 'get_register', 'uses' => 'Auth\AuthController@getRegister']);
+Route::post('register', ['as' => 'post_register', 'uses' => 'Auth\AuthController@postRegister']);
 
 // Password reset link request routes...
-Route::get('password/email', 'Auth\PasswordController@getEmail');
-Route::post('password/email', 'Auth\PasswordController@postEmail');
+Route::get('password/email', ['as' => 'get_email', 'uses' => 'Auth\PasswordController@getEmail']);
+Route::post('password/email', ['as' => 'post_email', 'uses' => 'Auth\PasswordController@postEmail']);
 
 // Password reset routes...
-Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');
+Route::get('password/reset/{token}', ['as' => 'get_password_reset', 'uses' => 'Auth\PasswordController@getReset']);
+Route::post('password/reset', ['as' => 'post_password_reset', 'uses' => 'Auth\PasswordController@postReset']);
 
 //User routes...
 Route::get('users', ['as' => 'all_users_path', 'uses' => 'UMSController@getAllUsers', 'middleware' => ['auth']]);
