@@ -155,6 +155,7 @@ return [
          * My Providers
          */
         App\SweetAlert\SweetAlertServiceProvider::class,
+	Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -213,6 +214,8 @@ return [
          * My Aliases
          */
         'Alert'     => App\SweetAlert\SweetAlert::class,
+	'Form' => Collective\Html\FormFacade::class,
+      	'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
